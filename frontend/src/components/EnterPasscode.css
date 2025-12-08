@@ -1,0 +1,70 @@
+.passcode-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.passcode-screen {
+  background: #111827;
+  color: #f9fafb;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 280px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.passcode-display {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem;
+  background: #020617;
+  border-radius: 999px;
+  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns like a phone */
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.keypad-key {
+  padding: 0.9rem 0;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.1rem;
+  background: #1f2937;
+  color: #f9fafb;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.1s ease;
+}
+
+.keypad-key:active {
+  transform: scale(0.96);
+  background: #374151;
+}
+
+.passcode-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.passcode-actions button {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #374151;
+  color: #f9fafb;
+}
+
+.passcode-actions button:active {
+  transform: scale(0.97);
+}

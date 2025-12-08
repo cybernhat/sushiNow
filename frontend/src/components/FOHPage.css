@@ -1,0 +1,22 @@
+.FOH-container {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.tables-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 x 2 layout */
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.table-button {
+  padding: 1.5rem 0;
+  border-radius: 12px;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 1rem;
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 // src/router/Layout.jsx
 import { Outlet, NavLink } from "react-router-dom";
+import "./Layout.css"
 
 export default function Layout() {
   const linkStyle = ({ isActive }) => ({
@@ -8,27 +9,10 @@ export default function Layout() {
   });
 
   return (
-    <div style={{ fontFamily: "sans-serif" }}>
+    <div style={{ fontFamily: "sans-serif" }} className="main-page">
       <header>
         <h1>sushiNow 🍣</h1>
-
-        <nav>
-          <NavLink to="/" style={linkStyle}>
-            Home
-          </NavLink>
-          <NavLink to="/tables" style={linkStyle}>
-            Tables
-          </NavLink>
-          <NavLink to="/orders" style={linkStyle}>
-            Orders
-          </NavLink>
-          <NavLink to="/kitchen" style={linkStyle}>
-            Kitchen
-          </NavLink>
-        </nav>
       </header>
-
-      {/* ⬇️ THIS IS ALL YOU NEED */}
       <Outlet />
     </div>
   );

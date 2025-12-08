@@ -1,11 +1,15 @@
 
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
-import HomePage from "../components/HomePage/HomePage";
-import TablesPage from "../components/TablesPage/TablesPage";
-import KitchenPage from "../components/KitchenPage/KitchenPage";
-import OrdersPage from "../components/Orders/OrdersPage";
-import OneOrder from "../components/Orders/OneOrder"; // if you use it later
+import HomePage from "../components/HomePage";
+import TablesPage from "../components/TablesPage";
+import KitchenPage from "../components/KitchenPage";
+import OrdersPage from "../components/OrdersPage";
+import OneOrder from "../components/OneOrder";
+import PasscodeScreen from "../components/EnterPasscode";
+import BOHPage from "../components/BOHPage";
+import FOHPage from "../components/FOHPage";
+import MenuPage from "../components/MenuPage";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +35,22 @@ export const router = createBrowserRouter([
         path: "/orders/:orderId",
         element: <OneOrder />,
       },
+      {
+        path: "/passcode",
+        element: <PasscodeScreen/>
+      },
+      {
+        path: "/BOH",
+        element: <BOHPage/>
+      },
+      {
+        path: "/FOH",
+        element: <FOHPage/>
+      },
+      {
+        path: "/menu",
+        element: <MenuPage/>
+      }
     ],
   },
 ]);
