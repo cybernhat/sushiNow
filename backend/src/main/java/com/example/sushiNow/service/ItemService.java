@@ -39,7 +39,8 @@ public class ItemService {
         return orderItems.stream()
             .map(oi -> new OrderItemResponse(
                     oi.getItem().getId(),      // itemId
-                    oi.getItem().getName(),    // item name
+                    oi.getItem().getName(),
+                    oi.getItem().getPrice(),    // item name
                     oi.getNotes()              // notes from order_items
             ))
             .toList();

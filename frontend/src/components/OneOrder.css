@@ -1,0 +1,79 @@
+.one-order-container {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: #111827; /* dark slate */
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.one-order-container > button {
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: transparent;
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+.one-order-container > button:hover {
+  background: #1f2937;
+}
+
+.one-order-container h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+}
+
+.one-order-container h2 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Items list */
+.order-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #374151;
+}
+
+.order-item-row {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1f2937;
+}
+
+.order-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-item-name {
+  font-size: 0.95rem;
+}
+
+.order-item-price {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.order-item-notes {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+/* Total row */
+.order-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #4b5563;
+  font-weight: 600;
+}

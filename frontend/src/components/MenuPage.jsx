@@ -1,10 +1,10 @@
-// src/components/MenuPage.jsx
-import { useLocation, NavLink } from "react-router-dom";
+import { useLocation, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./MenuPage.css";
 
 const MenuPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const params = new URLSearchParams(location.search);
   const tableId = params.get("table");
 
@@ -21,6 +21,9 @@ const MenuPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
+
+  // set-vacancy error
+  const [vacancyError, setVacancyError] = useState(null);
 
   // 🔹 fetch items from backend on mount
   useEffect(() => {
@@ -62,6 +65,7 @@ const MenuPage = () => {
     setOrderItems((prev) => [...prev, orderItem]);
     setSelectedOrderId(id);
     setSubmitSuccess(null); // clear old success when modifying order
+    setVacancyError(null);  // clear vacancy error if they start editing again
   };
 
   const handleSelectOrderItem = (id) => {
@@ -90,6 +94,7 @@ const MenuPage = () => {
     setSubmitting(true);
     setSubmitError(null);
     setSubmitSuccess(null);
+    setVacancyError(null);
 
     const payload = {
       tableId: Number(tableId),
@@ -126,6 +131,36 @@ const MenuPage = () => {
       setSubmitError("Failed to send order to kitchen.");
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  // 🔹 Set vacancy = PATCH /api/tables/{tableId}, then go back to /FOH
+  const handleSetVacancy = async () => {
+    if (!tableId) {
+      setVacancyError("No table selected.");
+      return;
+    }
+
+    setVacancyError(null);
+
+    try {
+      const res = await fetch(`/api/tables/${tableId}`, {
+        method: "PATCH",
+      });
+
+      if (!res.ok) {
+        // backend rejected: table still has active orders
+        setVacancyError(
+          "Cannot set vacancy. This table still has orders in progress"
+        );
+        return;
+      }
+
+      // success – table set to vacant, go back to FOH
+      navigate("/FOH");
+    } catch (err) {
+      console.error("Failed to set vacancy:", err);
+      setVacancyError("Failed to set vacancy.");
     }
   };
 
@@ -187,6 +222,17 @@ const MenuPage = () => {
               </button>
             </div>
 
+            {/* Set Vacancy button */}
+            <div className="order-actions" style={{ marginTop: "0.5rem" }}>
+              <button
+                className="order-vacancy-button"
+                onClick={handleSetVacancy}
+                disabled={!tableId}
+              >
+                Set Vacancy
+              </button>
+            </div>
+
             {submitError && (
               <p className="order-error" style={{ color: "red" }}>
                 {submitError}
@@ -195,6 +241,11 @@ const MenuPage = () => {
             {submitSuccess && (
               <p className="order-success" style={{ color: "green" }}>
                 {submitSuccess}
+              </p>
+            )}
+            {vacancyError && (
+              <p className="order-error" style={{ color: "red" }}>
+                {vacancyError}
               </p>
             )}
           </div>

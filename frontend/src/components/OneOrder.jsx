@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "./OneOrder.css";
 
 const OneOrder = () => {
   const { orderId } = useParams();
@@ -66,6 +67,11 @@ const OneOrder = () => {
     }
   };
 
+  const orderTotal = orderItems.reduce(
+    (sum, item) => sum + (item.price ?? 0),
+    0
+  );
+
   if (error) {
     return (
       <div className="one-order-container">
@@ -84,13 +90,14 @@ const OneOrder = () => {
     );
   }
 
+  console.log(orderItems)
+
   return (
     <div className="one-order-container">
       <button onClick={() => navigate(-1)}>← Back</button>
 
       <h1>Order #{order.id}</h1>
       <p>Table: {order.table?.id}</p>
-      <p>Status: {order.status}</p>
 
       {/* Accept → only when pending */}
       {order.status === "pending" && (
@@ -111,16 +118,32 @@ const OneOrder = () => {
       {orderItems.length === 0 ? (
         <p>No items found for this order.</p>
       ) : (
-        <ul className="order-items-list">
-          {orderItems.map((item, index) => (
-            <li key={index}>
-              <strong>{item.name}</strong>
-              {item.notes && item.notes.trim() !== "" && (
-                <span> — Notes: {item.notes}</span>
-              )}
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="order-items-list">
+            {orderItems.map((item, index) => (
+              <li key={index} className="order-item-row">
+                <div className="order-item-main">
+                  <span className="order-item-name">{item.name}</span>
+                  {item.price != null && (
+                    <span className="order-item-price">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  )}
+                </div>
+                {item.notes && item.notes.trim() !== "" && (
+                  <div className="order-item-notes">
+                    Notes: {item.notes}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <div className="order-total-row">
+            <span>Total:</span>
+            <span>${orderTotal.toFixed(2)}</span>
+          </div>
+        </>
       )}
     </div>
   );

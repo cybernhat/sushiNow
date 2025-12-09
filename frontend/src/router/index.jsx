@@ -10,6 +10,7 @@ import PasscodeScreen from "../components/EnterPasscode";
 import BOHPage from "../components/BOHPage";
 import FOHPage from "../components/FOHPage";
 import MenuPage from "../components/MenuPage";
+import CompletedOrder from "../components/CompletedOrders";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/BOH/orders/:orderId",
         element: <OneOrder />,
+      },
+      {
+        path: "/BOH/orders/completed",
+        element: <CompletedOrder/>
       },
       {
         path: "/passcode",

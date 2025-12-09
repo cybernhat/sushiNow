@@ -19,9 +19,7 @@ const BOHPage = () => {
                 const res = await fetch("/api/orders");
                 const data = await res.json();
 
-                // 🔥 sort by createdAt (earliest first)
                 const sorted = data.sort((a, b) => b.id - a.id);
-
                 setOrders(sorted);
             } catch (err) {
                 console.error("Failed to fetch orders", err);
@@ -33,9 +31,18 @@ const BOHPage = () => {
 
     return (
         <div className="BOH-container">
-            <NavLink to="/" className="home-button">
-                <button>Home</button>
-            </NavLink>
+            <div className="top-buttons">
+                <NavLink to="/" className="home-button">
+                    <button>Home</button>
+                </NavLink>
+
+                <button
+                    className="completed-button"
+                    onClick={() => navigate("/BOH/orders/completed")}
+                >
+                    Completed Orders
+                </button>
+            </div>
 
             <h1>Kitchen Orders</h1>
 
@@ -44,11 +51,13 @@ const BOHPage = () => {
                     <p>No active orders.</p>
                 ) : (
                     orders
-                        .filter(order => order.status === "pending" || order.status === "in progress")   // ⬅ only pending
+                        .filter(order => order.status === "pending" || order.status === "in progress")
                         .map((order) => (
                             <button
                                 key={order.id}
-                                className={`order-button ${order.status === "in progress" ? "in-progress" : ""}`}
+                                className={`order-button ${
+                                    order.status === "in progress" ? "in-progress" : ""
+                                }`}
                                 onClick={() => navigate(`/BOH/orders/${order.id}`)}
                             >
                                 Order #{order.id} — Table {order.table.id} — {order.status}
