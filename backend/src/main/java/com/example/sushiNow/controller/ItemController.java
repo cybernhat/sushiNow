@@ -2,6 +2,8 @@ package com.example.sushiNow.controller;
 
 import com.example.sushiNow.model.Item;
 import com.example.sushiNow.service.ItemService;
+import com.example.sushiNow.dto.*;
+import com.example.sushiNow.service.OrderService;
 import lombok.*;
 // import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,4 +25,9 @@ public class ItemController {
     public List<Item> getItemsByCategory(@PathVariable String category) {
         return itemService.getItemsByCategory(category);
     }
+
+    @GetMapping("/order/{orderId}")
+    public List<OrderItemResponse> getOrderItems(@PathVariable Long orderId) {
+    return itemService.getItemsByOrderId(orderId);
+}
 }

@@ -14,7 +14,6 @@ const PasscodeScreen = () => {
 
   const handleClear = () => setInput("");
 
-  console.log(input);
   const handleEnter = () => {
     if (input === "9172") {
       navigate("/FOH");

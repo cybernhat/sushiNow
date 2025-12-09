@@ -17,6 +17,11 @@ public class OrderController {
 
     private final OrderService orderService;
 
+    @GetMapping("/{orderId}")
+    public Order getOrderById(@PathVariable Long orderId) {
+        return orderService.findOrderById(orderId);
+    }
+
     @GetMapping
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();

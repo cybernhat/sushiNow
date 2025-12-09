@@ -1,22 +1,37 @@
-.FOH-container {
-  padding: 2rem;
-  font-family: sans-serif;
-}
-
+/* Grid layout for tables */
 .tables-grid {
-  margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 x 2 layout */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
-  max-width: 400px;
+  margin-top: 1rem;
 }
 
+/* Default table button */
 .table-button {
-  padding: 1.5rem 0;
-  border-radius: 12px;
-  border: none;
-  background: #111827;
-  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db; /* light gray */
+  background: black;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.15s ease;
 }
+
+/* Hover effect for available tables */
+.table-button:hover {
+  background: #f3f4f6; /* light gray hover */
+}
+
+/* Occupied tables turn green */
+.table-button.occupied {
+  background: #4ade80; /* green-400 */
+  border-color: #16a34a; /* green-600 */
+  color: white;
+}
+
+/* Optional: green hover becomes slightly darker */
+.table-button.occupied:hover {
+  background: #22c55e; /* green-500 */
+}
+

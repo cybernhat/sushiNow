@@ -25,6 +25,12 @@ public class OrderService {
         return orderRepo.findAll();
     }
 
+    public Order findOrderById(Long id) {
+        Order order = orderRepo.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Order not found"));
+        return order;
+    }
+
     @Transactional
     public Order createOrder(CreateOrderRequest request) {
         // Get user Id 
