@@ -1,0 +1,8 @@
+.home-page-container {             /* full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* centers vertically */
+  align-items: center;        /* centers horizontally */
+  padding-bottom: 3rem;       /* slight push upward so it doesn’t stick flush at bottom */
+  text-align: center;
+}

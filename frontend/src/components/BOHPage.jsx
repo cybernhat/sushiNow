@@ -32,8 +32,8 @@ const BOHPage = () => {
     return (
         <div className="BOH-container">
             <div className="top-buttons">
-                <NavLink to="/" className="home-button">
-                    <button>Home</button>
+                <NavLink to="/passcode" className="home-button">
+                    <button>Back</button>
                 </NavLink>
 
                 <button

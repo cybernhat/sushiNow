@@ -34,3 +34,7 @@
 .order-button.in-progress:hover {
   background: #7c3aed;   /* slightly darker violet on hover */
 }
+
+.completed-button {
+  margin-left: 100px;
+}

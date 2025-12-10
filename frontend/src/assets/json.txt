@@ -1,0 +1,16 @@
+JSON for orders POST route.
+
+{
+  "tableId": 3,
+  "userId": 1,
+  "items": [
+    {
+      "itemId": 12,
+      "notes": "no mayo"
+    },
+    {
+      "itemId": 7,
+      "notes": "extra spicy"
+    }
+  ]
+}

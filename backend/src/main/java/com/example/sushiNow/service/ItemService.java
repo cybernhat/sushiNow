@@ -1,16 +1,17 @@
 package com.example.sushiNow.service;
 
-import com.example.sushiNow.model.Item;
-import com.example.sushiNow.repo.ItemRepo;
-import com.example.sushiNow.repo.OrderItemRepo;
-import com.example.sushiNow.model.OrderItem;
-import com.example.sushiNow.model.Order;
-import com.example.sushiNow.repo.OrderRepo;
-import com.example.sushiNow.dto.OrderItemResponse;
-import lombok.*;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.sushiNow.dto.OrderItemResponse;
+import com.example.sushiNow.model.Item;
+import com.example.sushiNow.model.OrderItem;
+import com.example.sushiNow.repo.ItemRepo;
+import com.example.sushiNow.repo.OrderItemRepo;
+import com.example.sushiNow.repo.OrderRepo;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -44,5 +45,9 @@ public class ItemService {
                     oi.getNotes()              // notes from order_items
             ))
             .toList();
+    }
+
+    public List<OrderItem> getOrderItem() {
+        return orderItemRepo.findAll();
     }
 }

@@ -97,21 +97,21 @@ const MenuPage = () => {
     setVacancyError(null);
 
     const payload = {
-      tableId: Number(tableId),
-      userId: 1, // TODO: replace with logged-in FOH user id
+      tableId: Number(tableId), // tableId from params
+      userId: 1,  
       items: orderItems.map((item) => ({
         itemId: item.itemId,
-        notes: "", // hook this up later if you add notes per item
+        notes: "", 
       })),
     };
 
     try {
-      const res = await fetch("/api/orders", {
+      const res = await fetch("/api/orders", { // fetches from this backend endpoint from controller
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(payload), // transform payload into a JSON
       });
 
       if (!res.ok) {

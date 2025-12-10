@@ -10,9 +10,11 @@ export default function Layout() {
 
   return (
     <div style={{ fontFamily: "sans-serif" }} className="main-page">
-      <header>
-        <h1>sushiNow 🍣</h1>
-      </header>
+      <NavLink to="/">
+        <header>
+          <h1>sushiNow 🍣</h1>
+        </header>
+      </NavLink>
       <Outlet />
     </div>
   );
