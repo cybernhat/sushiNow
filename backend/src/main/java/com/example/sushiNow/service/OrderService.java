@@ -78,7 +78,7 @@ public class OrderService {
         if (!"BOH".equalsIgnoreCase(user.getRole())) {
             throw new RuntimeException("Only BOH can update order status.");
         } 
-
+        // je;;o
         Order order = orderRepo.findById(orderId)
                       .orElseThrow(() -> new RuntimeException("Order not found"));
 
