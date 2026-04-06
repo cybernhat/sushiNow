@@ -1,5 +1,5 @@
 // in backend/src/main/java/.../controller/HealthController.java
-package com.example.sushiNow.controller;
+package com.example.orderNow.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

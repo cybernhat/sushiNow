@@ -1,4 +1,4 @@
-package com.example.sushiNow.controller;
+package com.example.orderNow.controller;
 
 import java.util.List;
 
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.sushiNow.dto.OrderItemResponse;
-import com.example.sushiNow.model.Item;
-import com.example.sushiNow.model.OrderItem;
-import com.example.sushiNow.repo.OrderItemRepo;
-import com.example.sushiNow.service.ItemService;
+import com.example.orderNow.dto.OrderItemResponse;
+import com.example.orderNow.model.Item;
+import com.example.orderNow.model.OrderItem;
+import com.example.orderNow.repo.OrderItemRepo;
+import com.example.orderNow.service.ItemService;
 
 import lombok.RequiredArgsConstructor;
 

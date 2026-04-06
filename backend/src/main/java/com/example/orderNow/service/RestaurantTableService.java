@@ -1,9 +1,9 @@
-package com.example.sushiNow.service;
+package com.example.orderNow.service;
 
-import com.example.sushiNow.model.RestaurantTable;
-import com.example.sushiNow.repo.RestaurantTableRepo;
-import com.example.sushiNow.model.Order;
-import com.example.sushiNow.repo.OrderRepo;
+import com.example.orderNow.model.RestaurantTable;
+import com.example.orderNow.repo.RestaurantTableRepo;
+import com.example.orderNow.model.Order;
+import com.example.orderNow.repo.OrderRepo;
 import lombok.*;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
-package com.example.sushiNow.service;
+package com.example.orderNow.service;
 
-import com.example.sushiNow.dto.*;
-import com.example.sushiNow.model.*;
-import com.example.sushiNow.repo.*;
+import com.example.orderNow.dto.*;
+import com.example.orderNow.model.*;
+import com.example.orderNow.repo.*;
 import jakarta.transaction.Transactional;
 import lombok.*;
 import org.springframework.stereotype.Service;

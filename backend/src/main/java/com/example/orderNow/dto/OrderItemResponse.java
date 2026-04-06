@@ -1,4 +1,4 @@
-package com.example.sushiNow.dto;
+package com.example.orderNow.dto;
 
 import lombok.*;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.sushiNow.model;
+package com.example.orderNow.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

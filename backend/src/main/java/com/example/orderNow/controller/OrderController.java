@@ -1,8 +1,8 @@
-package com.example.sushiNow.controller;
+package com.example.orderNow.controller;
 
-import com.example.sushiNow.dto.*;
-import com.example.sushiNow.model.*;
-import com.example.sushiNow.service.*;
+import com.example.orderNow.dto.*;
+import com.example.orderNow.model.*;
+import com.example.orderNow.service.*;
 import java.util.List;
 import lombok.*;
 import org.springframework.http.HttpStatus;

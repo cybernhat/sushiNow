@@ -1,10 +1,10 @@
-package com.example.sushiNow.controller;
+package com.example.orderNow.controller;
 
-import com.example.sushiNow.service.*;
-import com.example.sushiNow.model.*;
+import com.example.orderNow.service.*;
+import com.example.orderNow.model.*;
 import lombok.*;
 import org.springframework.web.bind.annotation.*;
-import com.example.sushiNow.model.RestaurantTable;
+import com.example.orderNow.model.RestaurantTable;
 
 import java.util.List;
 

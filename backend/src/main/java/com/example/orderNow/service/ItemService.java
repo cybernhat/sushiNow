@@ -1,15 +1,15 @@
-package com.example.sushiNow.service;
+package com.example.orderNow.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.sushiNow.dto.OrderItemResponse;
-import com.example.sushiNow.model.Item;
-import com.example.sushiNow.model.OrderItem;
-import com.example.sushiNow.repo.ItemRepo;
-import com.example.sushiNow.repo.OrderItemRepo;
-import com.example.sushiNow.repo.OrderRepo;
+import com.example.orderNow.dto.OrderItemResponse;
+import com.example.orderNow.model.Item;
+import com.example.orderNow.model.OrderItem;
+import com.example.orderNow.repo.ItemRepo;
+import com.example.orderNow.repo.OrderItemRepo;
+import com.example.orderNow.repo.OrderRepo;
 
 import lombok.RequiredArgsConstructor;
 

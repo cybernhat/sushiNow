@@ -12,7 +12,7 @@ export default function Layout() {
     <div style={{ fontFamily: "sans-serif" }} className="main-page">
       <NavLink to="/">
         <header>
-          <h1>sushiNow 🍣</h1>
+          <h1>orderNow 🍣</h1>
         </header>
       </NavLink>
       <Outlet />

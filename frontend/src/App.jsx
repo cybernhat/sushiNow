@@ -14,7 +14,7 @@ function App() {
   return (
     <div style={{ fontFamily: "sans-serif", padding: "2rem" }}>
       <header>
-        <h1>sushiNow 🍣</h1>
+        <h1>orderNow 🍣</h1>
         <p>FOH & BOH ordering dashboard</p>
         <p>
           <strong>Backend status:</strong> {backendStatus}

@@ -1,6 +1,6 @@
-package com.example.sushiNow.repo;
+package com.example.orderNow.repo;
 
-import com.example.sushiNow.model.Item;
+import com.example.orderNow.model.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
