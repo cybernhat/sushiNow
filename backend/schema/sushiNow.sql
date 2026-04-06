@@ -16,7 +16,7 @@ CREATE TABLE items (
 	name VARCHAR(255) NOT NULL,
 	price NUMERIC(10, 2) NOT NULL,
 	description VARCHAR(255) NOT NULL,
-	category VARCHAR NOT NULL CHECK (category IN('Sushi', 'Sashimi', 'Nigiri', 'Appetizer'))
+	category VARCHAR NOT NULL CHECK (category IN('Ramen', 'Rice Bowl', 'Curry', 'Small Bite', 'Sake'))
 );
 
 CREATE TABLE tables (
