@@ -95,7 +95,7 @@ const MenuPage = () => {
     setSubmitError(null);
     setSubmitSuccess(null);
     setVacancyError(null);
-
+    //stuff 
     const payload = {
       tableId: Number(tableId), // tableId from params
       userId: 1,  
