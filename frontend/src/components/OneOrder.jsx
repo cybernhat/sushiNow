@@ -129,6 +129,13 @@ const OneOrder = () => {
                       ${item.price.toFixed(2)}
                     </span>
                   )}
+                  {item.status != null && (
+                    <span className="order-item-status">
+                      ${item.status}
+                    </span>
+                  )}
+                    
+                  
                 </div>
                 {item.notes && item.notes.trim() !== "" && (
                   <div className="order-item-notes">

@@ -40,7 +40,7 @@ CREATE TABLE order_items (
 	order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
 	item_id INTEGER NOT NULL REFERENCES items(id),
 	notes VARCHAR(255),
-	status VARCHAR(255)
+	status VARCHAR(255) DEFAULT 'In Progress'
 );
 
 INSERT INTO users (server_name, server_passcode, role)
