@@ -39,7 +39,8 @@ CREATE TABLE order_items (
 	id SERIAL PRIMARY KEY,
 	order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
 	item_id INTEGER NOT NULL REFERENCES items(id),
-	notes VARCHAR(255)
+	notes VARCHAR(255),
+	status VARCHAR(255)
 );
 
 INSERT INTO users (server_name, server_passcode, role)

@@ -23,4 +23,5 @@ public class OrderItem {
     @JoinColumn(name = "item_id", nullable = false)
     private Item item;
     private String notes;
+    private String status;
 }
